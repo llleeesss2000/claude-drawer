@@ -129,15 +129,15 @@ export default function ExplorePage({ onAddSkill }) {
             </button>
             {categories.map((category) => (
               <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === category
+                  activeCategory === category.id
                     ? 'bg-blue-600 text-white'
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
               >
-                {category}
+                {category.label}
               </button>
             ))}
           </div>
