@@ -5,8 +5,14 @@ export default function SkillDetail({ item, onClose, onAdd, isAdded }) {
     <div className="flex justify-between items-start p-6 border-b border-slate-700">
       <div>
         <h2 className="text-2xl font-bold">{item.name}</h2>
-        <span className="inline-block mt-2 px-2 py-1 text-xs font-semibold bg-slate-600 rounded-full">
-          {item.source}
+        <span className={`inline-block mt-2 px-2 py-1 text-xs font-semibold rounded-full ${
+          item.source === 'featured'
+            ? 'bg-purple-500/20 text-purple-300'
+            : item.source === 'official'
+            ? 'bg-blue-500/20 text-blue-300'
+            : 'bg-slate-600 text-slate-300'
+        }`}>
+          {item.source === 'featured' ? '⭐ 精選' : item.source === 'official' ? '官方' : '社群'}
         </span>
       </div>
       <button onClick={onClose} className="text-slate-400 hover:text-white transition-colors">

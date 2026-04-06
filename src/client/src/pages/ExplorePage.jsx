@@ -160,12 +160,14 @@ export default function ExplorePage({ onAddSkill }) {
                   </h3>
                   <span
                     className={`px-2 py-1 rounded text-xs font-medium ${
-                      item.source === 'official'
+                      item.source === 'featured'
+                        ? 'bg-purple-900/30 text-purple-400 border border-purple-800/50'
+                        : item.source === 'official'
                         ? 'bg-blue-900/30 text-blue-400 border border-blue-800/50'
                         : 'bg-orange-900/30 text-orange-400 border border-orange-800/50'
                     }`}
                   >
-                    {item.source === 'official' ? '官方' : '社群'}
+                    {item.source === 'featured' ? '⭐ 精選' : item.source === 'official' ? '官方' : '社群'}
                   </span>
                 </div>
 
@@ -178,6 +180,11 @@ export default function ExplorePage({ onAddSkill }) {
                 {item.source === 'community' && (
                   <div className="mb-4 text-xs text-orange-400 bg-orange-900/20 px-3 py-2 rounded border border-orange-900/30">
                     ⚠️ 社群維護，非官方
+                  </div>
+                )}
+                {item.source === 'featured' && (
+                  <div className="mb-4 text-xs text-purple-400 bg-purple-900/20 px-3 py-2 rounded border border-purple-900/30">
+                    ⭐ 社群精選推薦
                   </div>
                 )}
 

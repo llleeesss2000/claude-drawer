@@ -1,0 +1,355 @@
+// 精選推薦清單（來源：codelove.tw/@tony/post/3KX82a）
+// 這些項目帶有中文說明，固定排在探索中心最前面
+
+const CURATED_SKILLS = [
+  // 必裝入口
+  {
+    name: 'find-skills',
+    description: '社群技能搜尋與發現引擎，快速找到你需要的 Claude Code 技能',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 前端開發
+  {
+    name: 'frontend-design',
+    description: '網頁、Dashboard、落地頁設計，讓 Claude 產出高品質前端介面',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'web-artifacts-builder',
+    description: '複雜 SPA 與元件庫應用構建，適合大型前端專案',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'canvas-design',
+    description: '架構圖、流程圖、可視化繪圖，快速產出專業圖表',
+    category: 'creative',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'theme-factory',
+    description: '主題美化與視覺風格統一，讓介面風格保持一致',
+    category: 'creative',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'vercel-react-best-practices',
+    description: 'React 開發最佳實踐，遵循 Vercel 官方推薦規範',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'web-design-guidelines',
+    description: '網頁設計規範與 UI 優化，提升介面可用性與美觀度',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'vercel-composition-patterns',
+    description: '元件組合與重用策略，提高程式碼可維護性',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'shadcn',
+    description: 'shadcn/ui 元件庫專屬支援，快速整合精美 UI 元件',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'vercel-react-native-skills',
+    description: 'React Native 跨平台開發指導，Android 與 iOS 同步開發',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 文件與辦公
+  {
+    name: 'technical-writer',
+    description: '技術文件、README、API 文件生成，輸出專業技術文件',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'doc-coauthoring',
+    description: '技術方案與長文件協作，適合需要深度寫作的場景',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'docx',
+    description: 'Word 文件處理與格式轉換，直接操作 .docx 檔案',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'pptx',
+    description: 'PPT 演示文稿生成與編輯，快速製作簡報',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'pdf',
+    description: 'PDF 合併、拆分、OCR 與浮水印處理，全方位 PDF 工具',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'xlsx',
+    description: 'Excel 資料清理、公式與圖表生成，讓 Claude 處理試算表',
+    category: 'data',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 架構設計與品質
+  {
+    name: 'planning-with-files',
+    description: '複雜任務拆解與進度追蹤，讓大型任務有條不紊地推進',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'project-planner',
+    description: '專案規劃與需求梳理，協助整理專案藍圖與里程碑',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'architecture-patterns',
+    description: '架構模式推薦與選型指導，幫你挑選最合適的系統架構',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'architecture-decision-records',
+    description: 'ADR 架構決策記錄，留存每一次重要決策的脈絡與理由',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'requesting-code-review',
+    description: '專業程式碼審查，讓 Claude 像資深工程師一樣 review 你的程式',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 記憶與上下文
+  {
+    name: 'memory-intake',
+    description: '經驗與踩坑記錄存儲，讓 Claude 記住你的重要知識',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'memory-audit',
+    description: '記憶庫健康檢查與優化，清理過時的記憶內容',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'memory-evolution',
+    description: '記憶內容整合與精簡，讓記憶庫保持高效精準',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 測試與自動化
+  {
+    name: 'webapp-testing',
+    description: 'E2E 自動化測試用例生成，確保網頁應用品質穩定',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'test-driven-development',
+    description: 'TDD 開發模式引導，先寫測試再寫實作的最佳實踐',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 開發提效
+  {
+    name: 'brainstorming',
+    description: '技術問題頭腦風暴與方案生成，快速產出多種解決思路',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'systematic-debugging',
+    description: '結構化偵錯與根因定位，系統性找出 bug 的真正原因',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'writing-plans',
+    description: '開發任務拆解與實作計畫，讓複雜功能有清晰的執行路徑',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+  {
+    name: 'executing-plans',
+    description: '計畫執行與進度追蹤，確保每個步驟都按計畫推進',
+    category: 'productivity',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 安全稽核
+  {
+    name: 'audit-website',
+    description: '網站安全漏洞掃描與稽核報告，找出潛在的資安風險',
+    category: 'development',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+
+  // 自訂開發
+  {
+    name: 'skill-creator',
+    description: '自訂技能建立與工作流封裝，打造屬於自己的 Claude 技能',
+    category: 'other',
+    source: 'featured',
+    type: 'skill',
+    featured: true,
+  },
+];
+
+const CURATED_MCPS = [
+  {
+    name: 'neural-memory',
+    description: '神經網路跨會話長期記憶，讓 Claude 在不同對話間保留重要資訊',
+    category: 'productivity',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'playwright',
+    description: '瀏覽器自動化與 E2E 測試，讓 Claude 直接控制瀏覽器執行操作',
+    category: 'development',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'web_reader',
+    description: '網頁內容抓取與 Markdown 轉換，讓 Claude 讀取任意網頁內容',
+    category: 'productivity',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'filesystem',
+    description: '檔案系統存取與批次操作，讓 Claude 直接讀寫你的本地檔案',
+    category: 'other',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'sequential-thinking',
+    description: '鏈式推理與複雜問題分析，讓 Claude 一步步拆解困難問題',
+    category: 'productivity',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'figma-developer-mcp',
+    description: 'Figma 設計稿讀取與程式碼生成，設計師與工程師的橋樑',
+    category: 'creative',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: 'supercharged-figma',
+    description: 'Figma 畫布即時編輯與批次操作，加速設計工作流',
+    category: 'creative',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+  {
+    name: '4_5v_mcp',
+    description: 'AI 圖片分析與 UI 元件識別，讓 Claude 看懂設計截圖',
+    category: 'creative',
+    source: 'featured',
+    type: 'mcp',
+    featured: true,
+  },
+];
+
+const CURATED_ITEMS = [...CURATED_SKILLS, ...CURATED_MCPS].map(item => ({
+  ...item,
+  version: 'latest',
+  author: '',
+  keywords: [],
+  npmUrl: `https://www.npmjs.com/package/${item.name}`,
+}));
+
+module.exports = { CURATED_ITEMS };

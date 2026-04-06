@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const os = require('os');
 const https = require('https');
+const { CURATED_ITEMS } = require('../data/curated');
 
 const CACHE_DIR = path.join(os.homedir(), '.claude-drawer', 'cache');
 const CACHE_FILE = path.join(CACHE_DIR, 'registry.json');
@@ -74,14 +75,20 @@ async function fetchRegistry() {
       req.end();
     });
 
-    const items = data.objects.map(obj => parseItem(obj));
+    const npmItems = data.objects.map(obj => parseItem(obj));
 
-    // 官方排前面，官方內再依下載數排序
-    items.sort((a, b) => {
+    // 合併精選清單：精選優先，npm 結果去除已在精選中的重複項目
+    const curatedNames = new Set(CURATED_ITEMS.map(i => i.name));
+    const filtered = npmItems.filter(i => !curatedNames.has(i.name));
+
+    // 官方排在社群前面
+    filtered.sort((a, b) => {
       if (a.source === 'official' && b.source !== 'official') return -1;
       if (a.source !== 'official' && b.source === 'official') return 1;
       return 0;
     });
+
+    const items = [...CURATED_ITEMS, ...filtered];
 
     // Save to cache
     await fs.ensureDir(CACHE_DIR);
