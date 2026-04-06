@@ -1,8 +1,13 @@
 // 精選推薦清單（來源：codelove.tw/@tony/post/3KX82a）
 // 這些項目帶有中文說明，固定排在探索中心最前面
 
+const ANTHROPIC_SKILLS = 'https://github.com/anthropics/skills/tree/main/skills';
+const VERCEL_SKILLS = 'https://github.com/vercel-labs/agent-skills';
+const SUPERPOWERS = 'https://github.com/obra/superpowers/tree/main/skills';
+const MCP_SERVERS = 'https://github.com/modelcontextprotocol/servers/tree/main/src';
+
 const CURATED_SKILLS = [
-  // 必裝入口
+  // ── 必裝入口 ──────────────────────────────────────────────
   {
     name: 'find-skills',
     description: '社群技能搜尋與發現引擎，快速找到你需要的 Claude Code 技能',
@@ -10,9 +15,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/find-skills',
   },
 
-  // 前端開發
+  // ── 前端開發 ──────────────────────────────────────────────
   {
     name: 'frontend-design',
     description: '網頁、Dashboard、落地頁設計，讓 Claude 產出高品質前端介面',
@@ -20,6 +26,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/frontend-design`,
   },
   {
     name: 'web-artifacts-builder',
@@ -28,6 +35,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/web-artifacts-builder`,
   },
   {
     name: 'canvas-design',
@@ -36,6 +44,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/canvas-design`,
   },
   {
     name: 'theme-factory',
@@ -44,6 +53,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/theme-factory`,
   },
   {
     name: 'vercel-react-best-practices',
@@ -52,6 +62,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: VERCEL_SKILLS,
   },
   {
     name: 'web-design-guidelines',
@@ -60,6 +71,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: VERCEL_SKILLS,
   },
   {
     name: 'vercel-composition-patterns',
@@ -68,6 +80,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: VERCEL_SKILLS,
   },
   {
     name: 'shadcn',
@@ -76,6 +89,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://ui.shadcn.com',
   },
   {
     name: 'vercel-react-native-skills',
@@ -84,9 +98,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: VERCEL_SKILLS,
   },
 
-  // 文件與辦公
+  // ── 文件與辦公 ────────────────────────────────────────────
   {
     name: 'technical-writer',
     description: '技術文件、README、API 文件生成，輸出專業技術文件',
@@ -94,6 +109,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/technical-writer',
   },
   {
     name: 'doc-coauthoring',
@@ -102,6 +118,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/doc-coauthoring`,
   },
   {
     name: 'docx',
@@ -110,6 +127,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/docx`,
   },
   {
     name: 'pptx',
@@ -118,6 +136,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/pptx`,
   },
   {
     name: 'pdf',
@@ -126,6 +145,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/pdf`,
   },
   {
     name: 'xlsx',
@@ -134,9 +154,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/xlsx`,
   },
 
-  // 架構設計與品質
+  // ── 架構設計與品質 ────────────────────────────────────────
   {
     name: 'planning-with-files',
     description: '複雜任務拆解與進度追蹤，讓大型任務有條不紊地推進',
@@ -144,6 +165,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/planning-with-files',
   },
   {
     name: 'project-planner',
@@ -152,6 +174,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/project-planner',
   },
   {
     name: 'architecture-patterns',
@@ -160,6 +183,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/architecture-patterns',
   },
   {
     name: 'architecture-decision-records',
@@ -168,6 +192,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/architecture-decision-records',
   },
   {
     name: 'requesting-code-review',
@@ -176,9 +201,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/requesting-code-review',
   },
 
-  // 記憶與上下文
+  // ── 記憶與上下文 ──────────────────────────────────────────
   {
     name: 'memory-intake',
     description: '經驗與踩坑記錄存儲，讓 Claude 記住你的重要知識',
@@ -186,6 +212,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/memory-intake',
   },
   {
     name: 'memory-audit',
@@ -194,6 +221,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/memory-audit',
   },
   {
     name: 'memory-evolution',
@@ -202,9 +230,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/memory-evolution',
   },
 
-  // 測試與自動化
+  // ── 測試與自動化 ──────────────────────────────────────────
   {
     name: 'webapp-testing',
     description: 'E2E 自動化測試用例生成，確保網頁應用品質穩定',
@@ -212,6 +241,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/webapp-testing`,
   },
   {
     name: 'test-driven-development',
@@ -220,9 +250,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/test-driven-development',
   },
 
-  // 開發提效
+  // ── 開發提效 ──────────────────────────────────────────────
   {
     name: 'brainstorming',
     description: '技術問題頭腦風暴與方案生成，快速產出多種解決思路',
@@ -230,6 +261,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${SUPERPOWERS}/brainstorming`,
   },
   {
     name: 'systematic-debugging',
@@ -238,6 +270,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/systematic-debugging',
   },
   {
     name: 'writing-plans',
@@ -246,6 +279,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${SUPERPOWERS}/writing-plans`,
   },
   {
     name: 'executing-plans',
@@ -254,9 +288,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${SUPERPOWERS}/executing-plans`,
   },
 
-  // 安全稽核
+  // ── 安全稽核 ──────────────────────────────────────────────
   {
     name: 'audit-website',
     description: '網站安全漏洞掃描與稽核報告，找出潛在的資安風險',
@@ -264,9 +299,10 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: 'https://www.npmjs.com/package/audit-website',
   },
 
-  // 自訂開發
+  // ── 自訂開發 ──────────────────────────────────────────────
   {
     name: 'skill-creator',
     description: '自訂技能建立與工作流封裝，打造屬於自己的 Claude 技能',
@@ -274,6 +310,7 @@ const CURATED_SKILLS = [
     source: 'featured',
     type: 'skill',
     featured: true,
+    url: `${ANTHROPIC_SKILLS}/skill-creator`,
   },
 ];
 
@@ -285,6 +322,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://github.com/nhadaututtheky/neural-memory',
   },
   {
     name: 'playwright',
@@ -293,6 +331,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://github.com/microsoft/playwright-mcp',
   },
   {
     name: 'web_reader',
@@ -301,6 +340,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://www.npmjs.com/package/web_reader',
   },
   {
     name: 'filesystem',
@@ -309,6 +349,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: `${MCP_SERVERS}/filesystem`,
   },
   {
     name: 'sequential-thinking',
@@ -317,6 +358,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: `${MCP_SERVERS}/sequentialthinking`,
   },
   {
     name: 'figma-developer-mcp',
@@ -325,6 +367,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://www.figma.com/developers/mcp',
   },
   {
     name: 'supercharged-figma',
@@ -333,6 +376,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://www.npmjs.com/package/supercharged-figma',
   },
   {
     name: '4_5v_mcp',
@@ -341,6 +385,7 @@ const CURATED_MCPS = [
     source: 'featured',
     type: 'mcp',
     featured: true,
+    url: 'https://www.npmjs.com/package/4_5v_mcp',
   },
 ];
 
@@ -349,7 +394,7 @@ const CURATED_ITEMS = [...CURATED_SKILLS, ...CURATED_MCPS].map(item => ({
   version: 'latest',
   author: '',
   keywords: [],
-  npmUrl: `https://www.npmjs.com/package/${item.name}`,
+  npmUrl: item.url,
 }));
 
 module.exports = { CURATED_ITEMS };

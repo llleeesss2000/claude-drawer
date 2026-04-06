@@ -39,7 +39,10 @@ export default function SkillDetail({ item, onClose, onAdd, isAdded }) {
         <div>
           <a href={item.npmUrl} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center text-blue-400 hover:text-blue-300 font-medium">
-            在 npm 查看 →
+            {item.npmUrl.includes('github.com') ? '在 GitHub 查看 →'
+              : item.npmUrl.includes('figma.com') ? '在 Figma 查看 →'
+              : item.npmUrl.includes('shadcn') ? '在官網查看 →'
+              : '在 npm 查看 →'}
           </a>
         </div>
       )}
