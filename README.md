@@ -32,8 +32,7 @@ Claude 抽屜讓你用圖形介面管理 Claude Code 的一切設定：
 確認你已經安裝 [Node.js](https://nodejs.org/) 和 [Claude Code](https://claude.ai/code)，然後執行：
 
 ```bash
-  curl -fsSL                                                                    
-  https://raw.githubusercontent.com/llleeesss2000/claude-drawer/main/install.sh
+  curl -fsSL https://raw.githubusercontent.com/llleeesss2000/claude-drawer/main/install.sh
 ```
 
 安裝完成後，**桌面捷徑會自動建立**，雙擊即可開啟。
