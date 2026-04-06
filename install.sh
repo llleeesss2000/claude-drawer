@@ -46,11 +46,18 @@ else
 fi
 ok "下載完成"
 
-# ── 3. 安裝相依套件 ─────────────────────────────────────
+# ── 3. 安裝相依套件並建置前端 ──────────────────────────
 info "正在安裝相依套件..."
 cd "$INSTALL_DIR"
-npm install --production --ignore-scripts --silent
+npm install --ignore-scripts --silent
 ok "相依套件安裝完成"
+
+info "正在建置前端介面（首次需要一點時間）..."
+cd "$INSTALL_DIR/src/client"
+npm install --silent
+npm run build --silent
+cd "$INSTALL_DIR"
+ok "前端建置完成"
 
 # ── 4. 建立啟動器 ───────────────────────────────────────
 mkdir -p "$BIN_DIR"
