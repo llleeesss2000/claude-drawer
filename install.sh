@@ -63,6 +63,15 @@ ok "前端建置完成"
 mkdir -p "$BIN_DIR"
 cat > "$BIN_DIR/claude-drawer" << LAUNCHER
 #!/bin/bash
+PORT=3847
+
+# 若 port 已在使用中，直接開瀏覽器（代表程式已在跑）
+if ss -tlnp 2>/dev/null | grep -q ":\${PORT} " || lsof -ti:\$PORT &>/dev/null; then
+  xdg-open "http://localhost:\${PORT}" 2>/dev/null || \
+  python3 -m webbrowser "http://localhost:\${PORT}" 2>/dev/null
+  exit 0
+fi
+
 exec node "$INSTALL_DIR/bin/claude-drawer.js" "\$@"
 LAUNCHER
 chmod +x "$BIN_DIR/claude-drawer"
