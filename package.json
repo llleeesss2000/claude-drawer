@@ -1,0 +1,37 @@
+{
+  "name": "claude-drawer",
+  "version": "0.1.0",
+  "description": "Claude Code 圖形化管理工具，管理技能、MCP 伺服器、CLAUDE.md",
+  "bin": {
+    "claude-drawer": "./bin/claude-drawer.js"
+  },
+  "scripts": {
+    "start": "node bin/claude-drawer.js",
+    "dev:server": "nodemon src/server/index.js",
+    "dev:client": "cd src/client && vite",
+    "build": "cd src/client && vite build",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "open": "^9.1.0",
+    "fs-extra": "^11.2.0",
+    "which": "^3.0.1",
+    "semver": "^7.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "mcp",
+    "skills",
+    "gui"
+  ],
+  "license": "MIT"
+}

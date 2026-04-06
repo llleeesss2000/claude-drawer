@@ -1,0 +1,10 @@
+node_modules/
+src/client/dist/
+src/client/node_modules/
+*.log
+.DS_Store
+~/.claude-drawer/
+
+# 私人文件
+*.txt
+CLAUDE.md
