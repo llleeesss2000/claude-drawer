@@ -49,7 +49,7 @@ async function fetchRegistry() {
   try {
     const data = await new Promise((resolve, reject) => {
       const req = https.request(
-        'https://registry.npmjs.org/-/v1/search?text=claude-code+skills&size=100',
+        'https://registry.npmjs.org/-/v1/search?text=claude-code+skills&size=200',
         { timeout: 10000 },
         (res) => {
           let rawData = '';
@@ -75,7 +75,14 @@ async function fetchRegistry() {
     });
 
     const items = data.objects.map(obj => parseItem(obj));
-    
+
+    // 官方排前面，官方內再依下載數排序
+    items.sort((a, b) => {
+      if (a.source === 'official' && b.source !== 'official') return -1;
+      if (a.source !== 'official' && b.source === 'official') return 1;
+      return 0;
+    });
+
     // Save to cache
     await fs.ensureDir(CACHE_DIR);
     await fs.writeJson(CACHE_FILE, {

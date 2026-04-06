@@ -60,9 +60,7 @@ export default function ExplorePage({ onAddSkill }) {
   };
 
   const handleCardClick = (item) => {
-    if (!isAdded(item.name)) {
-      setSelectedItem(item);
-    }
+    setSelectedItem(item);
   };
 
   if (loading && !fromCache) {
@@ -207,7 +205,7 @@ export default function ExplorePage({ onAddSkill }) {
         {/* Detail Overlay */}
         {selectedItem && (
           <SkillDetail
-            skill={selectedItem}
+            item={selectedItem}
             onClose={() => setSelectedItem(null)}
             onAdd={() => {
               handleAddSkill(selectedItem.name);
